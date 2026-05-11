@@ -11,7 +11,7 @@
     { id: 'unsure',   label: 'Not Sure — I Need Ideas' },
   ];
 
-  var WELCOME = "Hey! I'm the SliceStack concierge. What brings you here today?";
+  var WELCOME = "Hey! I'm Nina, the SliceStack concierge. What brings you here today?";
 
   var history = [];
   var intent  = null;
@@ -27,7 +27,8 @@
     '#ss-panel{position:fixed;bottom:92px;right:24px;width:356px;max-height:520px;background:#fff;border-radius:16px;box-shadow:0 8px 48px rgba(0,0,0,.18);z-index:9998;display:flex;flex-direction:column;overflow:hidden;transform:scale(.95) translateY(10px);opacity:0;pointer-events:none;transition:transform .2s,opacity .2s;}',
     '#ss-panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}',
     '#ss-head{background:#e85d26;padding:13px 16px;display:flex;align-items:center;gap:10px;}',
-    '#ss-head .av{width:34px;height:34px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}',
+    '#ss-head .av{width:38px;height:38px;background:rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;flex-shrink:0;overflow:hidden;}',
+    '#ss-head .av img{width:100%;height:100%;object-fit:cover;border-radius:50%;}',
     '#ss-head .nm{font-size:14px;font-weight:600;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}',
     '#ss-head .st{font-size:11px;color:rgba(255,255,255,.75);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}',
     '#ss-head .info{flex:1;}',
@@ -63,8 +64,8 @@
   panel.id  = 'ss-panel';
   panel.innerHTML = [
     '<div id="ss-head">',
-      '<div class="av">⚡</div>',
-      '<div class="info"><div class="nm">SliceStack Concierge</div><div class="st">Typically replies instantly</div></div>',
+      '<div class="av" id="ss-av">N</div>',
+      '<div class="info"><div class="nm">Nina</div><div class="st">SliceStack Concierge · Replies instantly</div></div>',
       '<div id="ss-x">×</div>',
     '</div>',
     '<div id="ss-msgs"></div>',
@@ -192,11 +193,4 @@
   sendBtn.addEventListener('click', sendMsg);
 
   inp.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
-  });
-
-  inp.addEventListener('input', function () {
-    inp.style.height = 'auto';
-    inp.style.height = Math.min(inp.scrollHeight, 80) + 'px';
-  });
-})();
+    if (e.key === 'Enter' &
