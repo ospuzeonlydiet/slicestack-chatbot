@@ -12,6 +12,13 @@
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
+    },
+    {
+      "source": "/nina-avatar.png",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
     }
   ]
 }

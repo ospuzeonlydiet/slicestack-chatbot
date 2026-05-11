@@ -64,7 +64,7 @@
   panel.id  = 'ss-panel';
   panel.innerHTML = [
     '<div id="ss-head">',
-      '<div class="av" id="ss-av">N</div>',
+      '<div class="av" id="ss-av"><img src="https://project-ix0ct.vercel.app/nina-avatar.png" alt="Nina"></div>',
       '<div class="info"><div class="nm">Nina</div><div class="st">SliceStack Concierge · Replies instantly</div></div>',
       '<div id="ss-x">×</div>',
     '</div>',
@@ -193,4 +193,11 @@
   sendBtn.addEventListener('click', sendMsg);
 
   inp.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' &
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
+  });
+
+  inp.addEventListener('input', function () {
+    inp.style.height = 'auto';
+    inp.style.height = Math.min(inp.scrollHeight, 80) + 'px';
+  });
+})();

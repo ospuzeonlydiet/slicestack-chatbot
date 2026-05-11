@@ -3,7 +3,7 @@ import OpenAI from 'openai';
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 const CONCIERGE_LEADS_URL = process.env.CONCIERGE_LEADS_URL
-  || 'https://project-ix0ct.vercel.app/api/concierge-leads';
+  || 'https://voice-leads-api.onrender.com/api/concierge-leads';
 
 const SYSTEM_PROMPT = `You are the SliceStack Concierge on the website chat. You speak to low-tech small service business owners.
 Tone: Sharp, confident, simple, warm. Never say "How can I assist you?". No jargon.
