@@ -1,6 +1,6 @@
 (function () {
   var CONFIG = {
-    apiUrl: 'https://YOUR_VERCEL_URL.vercel.app/api/chat', // ← update after deploy
+    apiUrl: 'https://project-ix0ct.vercel.app/api/chat',
     primaryColor: '#e85d26',
   };
 
